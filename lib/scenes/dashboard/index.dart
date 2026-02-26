@@ -48,17 +48,17 @@ class DashboardPage extends StatelessComponent {
       ]),
       div(classes: 'grid three-col', [
         div(classes: 'card', [
-          h3([.text('Campaign')]),
+          h3([.text('الحملة')]),
           const div(classes: 'center-col', [ProgressCircle(size: 120)]),
           p(classes: 'green', [.text('\$48,352 revenue generated')]),
           p(classes: 'muted', [.text('Includes extra misc expenditures and costs')]),
         ]),
         div(classes: 'card', [
-          h3([.text('Sales Quantity')]),
+          h3([.text('كمية المبيعات')]),
           const SimpleBarChart(values: [14, 28, 39, 25, 41, 55, 60]),
         ]),
         div(classes: 'card', [
-          h3([.text('Geography Based Traffic')]),
+          h3([.text('الترافيك حسب المنطقة الجغرافية')]),
           div(classes: 'geo-placeholder', [.text('🌍 Map Placeholder')]),
         ]),
       ])
