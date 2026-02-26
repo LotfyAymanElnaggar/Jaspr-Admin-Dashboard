@@ -182,3 +182,16 @@ td{font-size:14px}
 .team-pill.manager{background:#32957f}
 .team-pill.user{background:#2d8a74}
 .team-footer{background:#4a4db7;padding:10px 14px;min-height:40px}
+
+/* dashboard reference tuning */
+.dashboard-page .page-header{margin-bottom:10px}
+.dashboard-download{font-size:12px;letter-spacing:.4px;padding:10px 14px;border-radius:3px;background:#5b58d6}
+.dashboard-stats .stat-card{min-height:110px}
+.dashboard-mid .card,.dashboard-bottom .card{min-height:220px}
+.revenue-card .line-svg{height:240px}
+.tx-card{padding:0}.tx-card h3{padding:12px 14px;border-bottom:1px solid #34466e}.tx-card .tx{padding:12px 14px;margin:0;border-top:none;border-bottom:1px solid #324462}
+.tx-card .pill{background:#4cceac;color:#102b25;border-radius:3px}
+.campaign-donut{width:140px;height:140px;border-radius:50%;background:conic-gradient(#4cceac 0 72%, #6870fa 72% 100%);position:relative}
+.campaign-donut:after{content:'';position:absolute;inset:18px;background:var(--panel);border-radius:50%}
+.sales-card .chart-wrap{height:180px}
+.geo-mini-card .geo-svg.mini{height:200px}
