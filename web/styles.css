@@ -231,3 +231,10 @@ input.invalid{border-color:#e66;box-shadow:0 0 0 1px #e6656555}
 .invoice-th:nth-child(6),.invoice-td:nth-child(6){width:120px}
 .invoice-th:nth-child(7),.invoice-td:nth-child(7){flex:1}
 .invoice-td.name,.invoice-td.cost{color:#4cceac}
+
+/* phase 14 sidebar fidelity */
+.logo-wrap{padding-bottom:6px}
+.avatar-img{border-radius:50%;display:block;margin:0 auto 8px;object-fit:cover;border:2px solid #31466f}
+.profile-card{padding-top:16px;padding-bottom:14px}
+.sidebar .menu-item{font-size:13px;line-height:1.2}
+.sidebar.collapsed .menu-item{display:grid;place-items:center;padding:10px 6px}

@@ -35,14 +35,17 @@ class Sidebar extends StatelessComponent {
     ];
 
     return aside(classes: collapsed ? 'sidebar collapsed' : 'sidebar', [
-      div(classes: 'logo-wrap', [h2(classes: 'brand', [.text(collapsed ? 'AD' : 'ADMINIS')])]),
+      div(classes: 'logo-wrap row between center', [
+        h2(classes: 'brand', [.text(collapsed ? 'AD' : 'ADMINIS')]),
+        if (!collapsed) p(classes: 'muted', [.text('☰')]),
+      ]),
       if (!collapsed)
         div(classes: 'profile-card', [
-          div(classes: 'avatar', [.text('ER')]),
+          img(src: '/assets/user.svg', attributes: {'alt': 'profile', 'width': '72', 'height': '72', 'class': 'avatar-img'}),
           h3([.text('Ed Roh')]),
           p(classes: 'accent', [.text('VP Fancy Admin')]),
         ]),
-      Link(to: '/', child: div(classes: location == '/' ? 'menu-item active' : 'menu-item', [.text(collapsed ? '🏠' : 'Dashboard')])),
+      Link(to: '/', child: div(classes: location == '/' ? 'menu-item active' : 'menu-item', [.text(collapsed ? '🏠' : '🏠  Dashboard')])),
       for (final section in sections) ...[
         if (!collapsed) p(classes: 'section-title', [.text(section.title)]),
         for (final item in section.items)
@@ -50,7 +53,7 @@ class Sidebar extends StatelessComponent {
             to: item.$2,
             child: div(
               classes: location == item.$2 ? 'menu-item active' : 'menu-item',
-              [.text(collapsed ? _iconFor(item.$2) : item.$1)],
+              [.text(collapsed ? _iconFor(item.$2) : '${_iconFor(item.$2)}  ${item.$1}')],
             ),
           ),
       ]
@@ -66,7 +69,7 @@ class Sidebar extends StatelessComponent {
       case '/invoices':
         return '🧾';
       case '/form':
-        return '📝';
+        return '👤';
       case '/calendar':
         return '📅';
       case '/faq':
@@ -74,11 +77,11 @@ class Sidebar extends StatelessComponent {
       case '/bar':
         return '📊';
       case '/pie':
-        return '🥧';
+        return '◔';
       case '/line':
         return '📈';
       case '/geography':
-        return '🌍';
+        return '🗺';
       default:
         return '•';
     }
