@@ -21,11 +21,18 @@ class _DataTableXState extends State<DataTableX> {
   String sortKey = '';
   bool asc = true;
   int page = 1;
-  final int perPage = 5;
+  final int perPage = 7;
   final Set<String> selected = {};
+  String query = '';
 
-  List<Map<String, String>> get _sorted {
-    final list = [...component.rows];
+  List<Map<String, String>> get _rows {
+    var list = [...component.rows];
+
+    if (query.trim().isNotEmpty) {
+      final q = query.toLowerCase();
+      list = list.where((r) => r.values.any((v) => v.toLowerCase().contains(q))).toList();
+    }
+
     if (sortKey.isNotEmpty) {
       list.sort((a, b) {
         final av = (a[sortKey] ?? '');
@@ -33,12 +40,13 @@ class _DataTableXState extends State<DataTableX> {
         return asc ? av.compareTo(bv) : bv.compareTo(av);
       });
     }
+
     return list;
   }
 
   @override
   Component build(BuildContext context) {
-    final rows = _sorted;
+    final rows = _rows;
     final totalPages = (rows.length / perPage).ceil().clamp(1, 999);
     if (page > totalPages) page = totalPages;
     final start = (page - 1) * perPage;
@@ -46,7 +54,22 @@ class _DataTableXState extends State<DataTableX> {
     final pageRows = rows.sublist(start, end);
 
     return div([
-      p(classes: 'muted', [.text('${rows.length} rows')]),
+      div(classes: 'table-toolbar row between center', [
+        input(
+          classes: 'table-search',
+          attributes: {'placeholder': 'Filter...', 'value': query},
+          onInput: (e) => setState(() {
+            query = (e as dynamic).value?.toString() ?? '';
+            page = 1;
+          }),
+        ),
+        div(classes: 'row center', [
+          button(classes: 'icon-btn', [.text('⤓ CSV')]),
+          button(classes: 'icon-btn', [.text('☷ Columns')]),
+          button(classes: 'icon-btn', [.text('⛃ Density')]),
+        ])
+      ]),
+
       div(classes: 'table-wrap', [
         table([
           thead([
@@ -95,8 +118,8 @@ class _DataTableXState extends State<DataTableX> {
         ])
       ]),
       div(classes: 'row between center', [
-        p(classes: 'muted', [.text('Selected: ${selected.length}')]),
-        div(classes: 'row', [
+        p(classes: 'muted', [.text('Selected: ${selected.length} • ${rows.length} rows')]),
+        div(classes: 'row center', [
           button(classes: 'icon-btn', onClick: page > 1 ? () => setState(() => page--) : null, [.text('←')]),
           p([.text('Page $page / $totalPages')]),
           button(classes: 'icon-btn', onClick: page < totalPages ? () => setState(() => page++) : null, [.text('→')]),
