@@ -48,18 +48,27 @@ class DashboardPage extends StatelessComponent {
       ]),
       div(classes: 'grid three-col', [
         div(classes: 'card', [
-          h3([.text('الحملة')]),
+          h3([.text('Campaign')]),
           const div(classes: 'center-col', [ProgressCircle(size: 120)]),
           p(classes: 'green', [.text('\$48,352 revenue generated')]),
           p(classes: 'muted', [.text('Includes extra misc expenditures and costs')]),
         ]),
         div(classes: 'card', [
-          h3([.text('كمية المبيعات')]),
+          h3([.text('Sales Quantity')]),
           const SimpleBarChart(values: [14, 28, 39, 25, 41, 55, 60]),
         ]),
         div(classes: 'card', [
-          h3([.text('الترافيك حسب المنطقة الجغرافية')]),
-          div(classes: 'geo-placeholder', [.text('🌍 Map Placeholder')]),
+          h3([.text('Geography Based Traffic')]),
+          svg(attributes: {'viewBox': '0 0 420 180', 'class': 'geo-svg mini'}, [
+            path(attributes: {'d': 'M40 80 L95 60 L130 92 L110 130 L60 125 Z', 'class': 'g1'}, []),
+            path(attributes: {'d': 'M145 70 L200 58 L235 98 L220 140 L165 130 Z', 'class': 'g2'}, []),
+            path(attributes: {'d': 'M250 78 L305 62 L340 90 L330 138 L270 132 Z', 'class': 'g3'}, []),
+          ]),
+          div(classes: 'legend row', [
+            p([div([], classes: 'dot a'), .text(' low')]),
+            p([div([], classes: 'dot b'), .text(' medium')]),
+            p([div([], classes: 'dot c'), .text(' high')]),
+          ])
         ]),
       ])
     ]);

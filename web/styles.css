@@ -161,3 +161,5 @@ td{font-size:14px}
 .pie-wrap .legend p{font-size:13px}
 .geo-svg path{transition:fill .2s ease}
 .geo-svg path:hover{fill:#7a8bff88}
+
+.geo-svg.mini{height:190px;margin-top:6px}
