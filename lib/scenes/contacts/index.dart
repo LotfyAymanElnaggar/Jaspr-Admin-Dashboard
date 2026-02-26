@@ -1,6 +1,5 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import '../../components/data_table.dart';
 import '../../components/header_block.dart';
 import '../../data/mock_data.dart';
 
@@ -9,37 +8,32 @@ class ContactsPage extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final rows = mockContacts
-        .map((c) => {
-              'id': '${c.id}',
-              'registrarId': '${c.registrarId}',
-              'name': c.name,
-              'age': '${c.age}',
-              'phone': c.phone,
-              'email': c.email,
-              'address': c.address,
-              'city': c.city,
-              'zipCode': c.zipCode,
-            })
-        .toList();
-
     return div(classes: 'page', [
       const HeaderBlock(title: 'CONTACTS', subtitle: 'List of Contacts for Future Reference'),
-      div(classes: 'card', [
-        DataTableX(
-          columns: const [
-            TableColumn('id', 'ID'),
-            TableColumn('registrarId', 'Registrar ID'),
-            TableColumn('name', 'Name'),
-            TableColumn('age', 'Age'),
-            TableColumn('phone', 'Phone Number'),
-            TableColumn('email', 'Email'),
-            TableColumn('address', 'Address'),
-            TableColumn('city', 'City'),
-            TableColumn('zipCode', 'Zip Code'),
-          ],
-          rows: rows,
-        )
+      div(classes: 'card contact-table-card', [
+        div(classes: 'contact-head row center', [
+          div(classes: 'contact-th', [.text('ID')]),
+          div(classes: 'contact-th', [.text('Registrar ID')]),
+          div(classes: 'contact-th', [.text('Name')]),
+          div(classes: 'contact-th', [.text('Age')]),
+          div(classes: 'contact-th', [.text('Phone Number')]),
+          div(classes: 'contact-th', [.text('Email')]),
+          div(classes: 'contact-th', [.text('Address')]),
+          div(classes: 'contact-th', [.text('City')]),
+          div(classes: 'contact-th', [.text('Zip Code')]),
+        ]),
+        for (final c in mockContacts)
+          div(classes: 'contact-row row center', [
+            div(classes: 'contact-td', [.text('${c.id}')]),
+            div(classes: 'contact-td', [.text('${c.registrarId}')]),
+            div(classes: 'contact-td name', [.text(c.name)]),
+            div(classes: 'contact-td', [.text('${c.age}')]),
+            div(classes: 'contact-td', [.text(c.phone)]),
+            div(classes: 'contact-td', [.text(c.email)]),
+            div(classes: 'contact-td', [.text(c.address)]),
+            div(classes: 'contact-td', [.text(c.city)]),
+            div(classes: 'contact-td', [.text(c.zipCode)]),
+          ]),
       ])
     ]);
   }

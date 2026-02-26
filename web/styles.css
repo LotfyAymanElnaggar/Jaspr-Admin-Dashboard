@@ -201,3 +201,33 @@ input.invalid{border-color:#e66;box-shadow:0 0 0 1px #e6656555}
 .field-error{margin:2px 0 0;color:#f2a6a6;font-size:12px}
 .form-error{color:#f2a6a6;font-size:13px}
 .chart-wrap.with-grid{position:relative;background-image:linear-gradient(to top, transparent 24%, #324462 25%, transparent 26%),linear-gradient(to top, transparent 49%, #324462 50%, transparent 51%),linear-gradient(to top, transparent 74%, #324462 75%, transparent 76%);background-size:100% 100%}
+
+/* contacts exact-like */
+.contact-table-card{padding:0;overflow:auto}
+.contact-head{background:#4a4db7;padding:10px 12px;border-bottom:1px solid #5f61cc;min-width:1500px}
+.contact-row{padding:8px 12px;border-bottom:1px solid #2f3d63;min-width:1500px;min-height:52px}
+.contact-th,.contact-td{font-size:12px;color:#dbe3ff}
+.contact-th:nth-child(1),.contact-td:nth-child(1){width:50px}
+.contact-th:nth-child(2),.contact-td:nth-child(2){width:120px}
+.contact-th:nth-child(3),.contact-td:nth-child(3){width:160px}
+.contact-th:nth-child(4),.contact-td:nth-child(4){width:60px}
+.contact-th:nth-child(5),.contact-td:nth-child(5){width:170px}
+.contact-th:nth-child(6),.contact-td:nth-child(6){width:240px}
+.contact-th:nth-child(7),.contact-td:nth-child(7){width:330px}
+.contact-th:nth-child(8),.contact-td:nth-child(8){width:120px}
+.contact-th:nth-child(9),.contact-td:nth-child(9){width:100px}
+.contact-td.name{color:#4cceac}
+
+/* invoices exact-like */
+.invoice-table-card{padding:0;overflow:hidden}
+.invoice-head{background:#4a4db7;padding:10px 12px;border-bottom:1px solid #5f61cc}
+.invoice-row{padding:8px 12px;border-bottom:1px solid #2f3d63;min-height:52px}
+.invoice-th,.invoice-td{font-size:13px;color:#dbe3ff}
+.invoice-th.cb,.invoice-td.cb{width:40px}
+.invoice-th:nth-child(2),.invoice-td:nth-child(2){width:60px}
+.invoice-th:nth-child(3),.invoice-td:nth-child(3){width:220px}
+.invoice-th:nth-child(4),.invoice-td:nth-child(4){width:220px}
+.invoice-th:nth-child(5),.invoice-td:nth-child(5){width:260px}
+.invoice-th:nth-child(6),.invoice-td:nth-child(6){width:120px}
+.invoice-th:nth-child(7),.invoice-td:nth-child(7){flex:1}
+.invoice-td.name,.invoice-td.cost{color:#4cceac}
