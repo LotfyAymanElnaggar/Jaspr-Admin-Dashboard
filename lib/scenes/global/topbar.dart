@@ -2,7 +2,10 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 class Topbar extends StatelessComponent {
-  const Topbar({super.key});
+  final void Function() onToggleTheme;
+  final void Function() onToggleSidebar;
+
+  const Topbar({required this.onToggleTheme, required this.onToggleSidebar, super.key});
 
   @override
   Component build(BuildContext context) {
@@ -12,7 +15,8 @@ class Topbar extends StatelessComponent {
         button([.text('🔎')]),
       ]),
       div(classes: 'top-icons', [
-        button([.text('🌙')]),
+        button(onClick: onToggleSidebar, [.text('☰')]),
+        button(onClick: onToggleTheme, [.text('🌓')]),
         button([.text('🔔')]),
         button([.text('⚙️')]),
         button([.text('👤')]),

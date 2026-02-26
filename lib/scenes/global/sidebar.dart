@@ -9,7 +9,8 @@ class SidebarSection {
 }
 
 class Sidebar extends StatelessComponent {
-  const Sidebar({super.key});
+  final bool collapsed;
+  const Sidebar({required this.collapsed, super.key});
 
   @override
   Component build(BuildContext context) {
@@ -33,22 +34,53 @@ class Sidebar extends StatelessComponent {
       ]),
     ];
 
-    return aside(classes: 'sidebar', [
-      div(classes: 'logo-wrap', [h2(classes: 'brand', [.text('ADMINIS')])]),
-      div(classes: 'profile-card', [
-        div(classes: 'avatar', [.text('ER')]),
-        h3([.text('Ed Roh')]),
-        p(classes: 'accent', [.text('VP Fancy Admin')]),
-      ]),
-      Link(to: '/', child: div(classes: location == '/' ? 'menu-item active' : 'menu-item', [.text('Dashboard')])),
+    return aside(classes: collapsed ? 'sidebar collapsed' : 'sidebar', [
+      div(classes: 'logo-wrap', [h2(classes: 'brand', [.text(collapsed ? 'AD' : 'ADMINIS')])]),
+      if (!collapsed)
+        div(classes: 'profile-card', [
+          div(classes: 'avatar', [.text('ER')]),
+          h3([.text('Ed Roh')]),
+          p(classes: 'accent', [.text('VP Fancy Admin')]),
+        ]),
+      Link(to: '/', child: div(classes: location == '/' ? 'menu-item active' : 'menu-item', [.text(collapsed ? '🏠' : 'Dashboard')])),
       for (final section in sections) ...[
-        p(classes: 'section-title', [.text(section.title)]),
+        if (!collapsed) p(classes: 'section-title', [.text(section.title)]),
         for (final item in section.items)
           Link(
             to: item.$2,
-            child: div(classes: location == item.$2 ? 'menu-item active' : 'menu-item', [.text(item.$1)]),
+            child: div(
+              classes: location == item.$2 ? 'menu-item active' : 'menu-item',
+              [.text(collapsed ? _iconFor(item.$2) : item.$1)],
+            ),
           ),
       ]
     ]);
+  }
+
+  String _iconFor(String path) {
+    switch (path) {
+      case '/team':
+        return '👥';
+      case '/contacts':
+        return '📇';
+      case '/invoices':
+        return '🧾';
+      case '/form':
+        return '📝';
+      case '/calendar':
+        return '📅';
+      case '/faq':
+        return '❓';
+      case '/bar':
+        return '📊';
+      case '/pie':
+        return '🥧';
+      case '/line':
+        return '📈';
+      case '/geography':
+        return '🌍';
+      default:
+        return '•';
+    }
   }
 }

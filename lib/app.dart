@@ -16,34 +16,47 @@ import 'scenes/faq/index.dart';
 import 'scenes/calendar/index.dart';
 import 'scenes/geography/index.dart';
 
-class App extends StatelessComponent {
+class App extends StatefulComponent {
   const App({super.key});
 
   @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  bool isSidebarCollapsed = false;
+  bool isLight = false;
+
+  @override
   Component build(BuildContext context) {
-    return Router(routes: [
-      ShellRoute(
-        builder: (context, state, child) => div(classes: 'app-shell', [
-          const Sidebar(),
-          div(classes: 'main-area', [
-            const Topbar(),
-            div(classes: 'content', [child]),
+    return div(classes: isLight ? 'theme-light' : 'theme-dark', [
+      Router(routes: [
+        ShellRoute(
+          builder: (context, state, child) => div(classes: 'app-shell', [
+            Sidebar(collapsed: isSidebarCollapsed),
+            div(classes: 'main-area', [
+              Topbar(
+                onToggleTheme: () => setState(() => isLight = !isLight),
+                onToggleSidebar: () => setState(() => isSidebarCollapsed = !isSidebarCollapsed),
+              ),
+              div(classes: 'content', [child]),
+            ]),
           ]),
-        ]),
-        routes: [
-          Route(path: '/', title: 'Dashboard', builder: (context, state) => const DashboardPage()),
-          Route(path: '/team', title: 'Team', builder: (context, state) => const TeamPage()),
-          Route(path: '/contacts', title: 'Contacts', builder: (context, state) => const ContactsPage()),
-          Route(path: '/invoices', title: 'Invoices', builder: (context, state) => const InvoicesPage()),
-          Route(path: '/form', title: 'Form', builder: (context, state) => const FormPage()),
-          Route(path: '/bar', title: 'Bar', builder: (context, state) => const BarPage()),
-          Route(path: '/pie', title: 'Pie', builder: (context, state) => const PiePage()),
-          Route(path: '/line', title: 'Line', builder: (context, state) => const LinePage()),
-          Route(path: '/faq', title: 'FAQ', builder: (context, state) => const FaqPage()),
-          Route(path: '/calendar', title: 'Calendar', builder: (context, state) => const CalendarPage()),
-          Route(path: '/geography', title: 'Geography', builder: (context, state) => const GeographyPage()),
-        ],
-      ),
+          routes: [
+            Route(path: '/', title: 'Dashboard', builder: (context, state) => const DashboardPage()),
+            Route(path: '/team', title: 'Team', builder: (context, state) => const TeamPage()),
+            Route(path: '/contacts', title: 'Contacts', builder: (context, state) => const ContactsPage()),
+            Route(path: '/invoices', title: 'Invoices', builder: (context, state) => const InvoicesPage()),
+            Route(path: '/form', title: 'Form', builder: (context, state) => const FormPage()),
+            Route(path: '/bar', title: 'Bar', builder: (context, state) => const BarPage()),
+            Route(path: '/pie', title: 'Pie', builder: (context, state) => const PiePage()),
+            Route(path: '/line', title: 'Line', builder: (context, state) => const LinePage()),
+            Route(path: '/faq', title: 'FAQ', builder: (context, state) => const FaqPage()),
+            Route(path: '/calendar', title: 'Calendar', builder: (context, state) => const CalendarPage()),
+            Route(path: '/geography', title: 'Geography', builder: (context, state) => const GeographyPage()),
+          ],
+        ),
+      ]),
     ]);
   }
 }
