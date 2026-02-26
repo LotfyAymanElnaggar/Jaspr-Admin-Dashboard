@@ -9,17 +9,17 @@ class Topbar extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return div(classes: 'topbar', [
-      div(classes: 'search', [
+    return div(classes: 'topbar topbar-exact', [
+      div(classes: 'search search-exact', [
         input(attributes: {'placeholder': 'Search'}),
-        button([.text('🔎')]),
+        button(classes: 'search-btn', [.text('🔎')]),
       ]),
-      div(classes: 'top-icons', [
-        button(onClick: onToggleSidebar, [.text('☰')]),
-        button(onClick: onToggleTheme, [.text('🌓')]),
-        button([.text('🔔')]),
-        button([.text('⚙️')]),
-        button([.text('👤')]),
+      div(classes: 'top-icons top-icons-exact', [
+        button(classes: 'icon-btn top-btn', onClick: onToggleSidebar, [.text('☰')]),
+        button(classes: 'icon-btn top-btn', onClick: onToggleTheme, [.text('◐')]),
+        button(classes: 'icon-btn top-btn', [.text('🔔')]),
+        button(classes: 'icon-btn top-btn', [.text('⚙')]),
+        button(classes: 'icon-btn top-btn', [.text('👤')]),
       ])
     ]);
   }
