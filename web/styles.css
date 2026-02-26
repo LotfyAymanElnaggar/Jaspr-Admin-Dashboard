@@ -264,3 +264,23 @@ input.invalid{border-color:#e66;box-shadow:0 0 0 1px #e6656555}
 .team-table-card,.invoice-table-card,.contact-table-card{border:1px solid #2e3d63}
 .stat-card .statbox h3{font-size:30px}
 .revenue-value{font-size:34px}
+
+
+/* phase 17 final dashboard/detail polish */
+.dashboard-page .card{background:#1f2a47}
+.dashboard-page .stat-card{border-color:#2e3f67}
+.dashboard-page .tx-card .tx .green{font-weight:700}
+.dashboard-page .tx-card .tx .muted{font-size:12px}
+.dashboard-page .tx-card .pill{font-size:12px;padding:5px 10px}
+.dashboard-page .campaign-card .muted{font-size:13px;text-align:center}
+.dashboard-page .campaign-card .green{text-align:center;font-weight:700}
+.dashboard-page .sales-card .chart-shell{margin-top:4px}
+.dashboard-page .geo-mini-card .legend{justify-content:flex-start;gap:8px}
+.dashboard-page .geo-mini-card .legend p{margin:2px 0;font-size:12px}
+.dashboard-page .geo-mini-card .geo-svg path{stroke:#dfe6ff;stroke-width:1.6}
+.sidebar{background:#1f2942}
+.sidebar .menu-item.active{background:#3438a6;border-color:#4d54d5}
+.sidebar .section-title{color:#7f8db5}
+.topbar-exact{border-bottom:1px solid #223155}
+.page-header .title{color:#f3f6ff}
+.page-header .subtitle{color:#4cceac}
