@@ -72,7 +72,7 @@ class _DataTableXState extends State<DataTableX> {
           }),
         ),
         div(classes: 'row center', [
-          a(attributes: {'href': _csvHref, 'download': 'table.csv'}, classes: 'icon-btn', [ .text('⤓ CSV') ]),
+          a(href: _csvHref, attributes: {'download': 'table.csv'}, classes: 'icon-btn', [ .text('⤓ CSV') ]),
           button(classes: 'icon-btn', onClick: () => setState(() => perPage = perPage == 7 ? 12 : 7), [.text('☷ Density')]),
           button(classes: 'icon-btn', onClick: () => setState(() {sortKey=''; asc=true; query=''; page=1;}), [.text('↺ Reset')]),
         ])
