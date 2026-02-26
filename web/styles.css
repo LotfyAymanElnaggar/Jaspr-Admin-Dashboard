@@ -97,3 +97,12 @@ td{font-size:14px}
 @media (max-width:640px){
   .stats{grid-template-columns:1fr}
 }
+
+
+/* phase 8 chart/calendar fidelity */
+.chart-shell{display:grid;gap:8px}
+.chart-label{font-size:12px;color:var(--muted);margin:0}
+.chart-wrap{align-items:flex-end}
+.bar-col{display:grid;justify-items:center;gap:4px}
+.bar-col .xlab{font-size:10px;color:var(--muted)}
+.calendar-layout{margin-top:10px}

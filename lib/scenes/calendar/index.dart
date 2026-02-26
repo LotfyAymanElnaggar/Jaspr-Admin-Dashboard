@@ -17,15 +17,30 @@ class _CalendarPageState extends State<CalendarPage> {
 
   int seed = 1;
   String view = 'month';
+  int monthOffset = 0;
+
+  String get monthTitle {
+    final months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    final idx = (8 + monthOffset) % 12;
+    return '${months[idx < 0 ? idx + 12 : idx]} 2022';
+  }
 
   @override
   Component build(BuildContext context) {
     return div(classes: 'page', [
       const HeaderBlock(title: 'Calendar', subtitle: 'Full Calendar Interactive Page'),
-      div(classes: 'row', [
-        button(classes: view == 'month' ? 'btn' : 'icon-btn', onClick: () => setState(() => view = 'month'), [.text('Month')]),
-        button(classes: view == 'week' ? 'btn' : 'icon-btn', onClick: () => setState(() => view = 'week'), [.text('Week')]),
-        button(classes: view == 'day' ? 'btn' : 'icon-btn', onClick: () => setState(() => view = 'day'), [.text('Day')]),
+      div(classes: 'row between center', [
+        div(classes: 'row', [
+          button(classes: 'icon-btn', onClick: () => setState(() => monthOffset--), [.text('←')]),
+          button(classes: 'icon-btn', onClick: () => setState(() => monthOffset = 0), [.text('Today')]),
+          button(classes: 'icon-btn', onClick: () => setState(() => monthOffset++), [.text('→')]),
+        ]),
+        h3([.text(monthTitle)]),
+        div(classes: 'row', [
+          button(classes: view == 'month' ? 'btn' : 'icon-btn', onClick: () => setState(() => view = 'month'), [.text('Month')]),
+          button(classes: view == 'week' ? 'btn' : 'icon-btn', onClick: () => setState(() => view = 'week'), [.text('Week')]),
+          button(classes: view == 'day' ? 'btn' : 'icon-btn', onClick: () => setState(() => view = 'day'), [.text('Day')]),
+        ]),
       ]),
       div(classes: 'calendar-layout', [
         div(classes: 'card', [
@@ -50,7 +65,6 @@ class _CalendarPageState extends State<CalendarPage> {
           )
         ]),
         div(classes: 'card calendar-grid', [
-          h3([.text('${view[0].toUpperCase()}${view.substring(1)} View')]),
           if (view == 'month')
             div(classes: 'month-grid', [
               for (int d = 1; d <= 30; d++)
