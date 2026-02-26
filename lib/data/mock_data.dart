@@ -45,6 +45,10 @@ const mockTeamData = <TeamMember>[
   TeamMember(3, 'Jaime Lannister', 'jaimelannister@gmail.com', 45, '(422)982-6739', 'user'),
   TeamMember(4, 'Anya Stark', 'anyastark@gmail.com', 16, '(921)425-6742', 'admin'),
   TeamMember(5, 'Daenerys Targaryen', 'daenerystargaryen@gmail.com', 31, '(421)445-1189', 'user'),
+  TeamMember(6, 'Ever Melisandre', 'evermelisandre@gmail.com', 150, '(232)545-6483', 'manager'),
+  TeamMember(7, 'Ferrara Clifford', 'ferraraclifford@gmail.com', 44, '(543)124-0123', 'user'),
+  TeamMember(8, 'Rossini Frances', 'rossinifrances@gmail.com', 36, '(222)444-5555', 'user'),
+  TeamMember(9, 'Harvey Roxie', 'harveyroxie@gmail.com', 65, '(444)555-6239', 'admin'),
 ];
 
 const mockContacts = <Contact>[

@@ -163,3 +163,22 @@ td{font-size:14px}
 .geo-svg path:hover{fill:#7a8bff88}
 
 .geo-svg.mini{height:190px;margin-top:6px}
+
+
+/* team exact-like page */
+.team-table-card{padding:0;overflow:hidden}
+.team-head{background:#4a4db7;padding:10px 12px;border-bottom:1px solid #5f61cc}
+.team-row{padding:8px 12px;border-bottom:1px solid #2f3d63;min-height:54px}
+.team-th,.team-td{font-size:13px;color:#dbe3ff}
+.team-th{opacity:.95}
+.team-th.cb,.team-td.cb{width:40px}
+.team-th:nth-child(2),.team-td:nth-child(2){width:60px}
+.team-th:nth-child(3),.team-td:nth-child(3){width:210px}
+.team-th:nth-child(4),.team-td:nth-child(4){width:70px}
+.team-th:nth-child(5),.team-td:nth-child(5){width:200px}
+.team-th:nth-child(6),.team-td:nth-child(6){width:250px}
+.team-th:nth-child(7),.team-td:nth-child(7){flex:1}
+.team-pill{display:inline-flex;align-items:center;gap:6px;background:#3da98f;color:#e9fffb;padding:6px 12px;border-radius:5px;font-size:12px;min-width:130px;justify-content:center}
+.team-pill.manager{background:#32957f}
+.team-pill.user{background:#2d8a74}
+.team-footer{background:#4a4db7;padding:10px 14px;min-height:40px}
