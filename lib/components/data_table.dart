@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
@@ -21,7 +22,7 @@ class _DataTableXState extends State<DataTableX> {
   String sortKey = '';
   bool asc = true;
   int page = 1;
-  final int perPage = 7;
+  int perPage = 7;
   final Set<String> selected = {};
   String query = '';
 
@@ -44,6 +45,13 @@ class _DataTableXState extends State<DataTableX> {
     return list;
   }
 
+  String get _csvHref {
+    final headers = component.columns.map((c) => c.label).join(',');
+    final lines = _rows.map((r) => component.columns.map((c) => '"${(r[c.key] ?? '').replaceAll('"', '""')}"').join(',')).join('\n');
+    final csv = '$headers\n$lines';
+    return 'data:text/csv;charset=utf-8,${Uri.encodeComponent(csv)}';
+  }
+
   @override
   Component build(BuildContext context) {
     final rows = _rows;
@@ -64,9 +72,9 @@ class _DataTableXState extends State<DataTableX> {
           }),
         ),
         div(classes: 'row center', [
-          button(classes: 'icon-btn', [.text('⤓ CSV')]),
-          button(classes: 'icon-btn', [.text('☷ Columns')]),
-          button(classes: 'icon-btn', [.text('⛃ Density')]),
+          a(attributes: {'href': _csvHref, 'download': 'table.csv'}, classes: 'icon-btn', [ .text('⤓ CSV') ]),
+          button(classes: 'icon-btn', onClick: () => setState(() => perPage = perPage == 7 ? 12 : 7), [.text('☷ Density')]),
+          button(classes: 'icon-btn', onClick: () => setState(() {sortKey=''; asc=true; query=''; page=1;}), [.text('↺ Reset')]),
         ])
       ]),
 
