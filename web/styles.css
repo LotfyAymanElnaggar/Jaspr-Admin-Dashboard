@@ -145,3 +145,19 @@ td{font-size:14px}
   .app-shell{grid-template-columns:1fr}
   .search input{min-width:160px}
 }
+
+
+/* phase 10 final qa tweaks */
+.content{padding-top:4px}
+.page{padding-top:2px}
+.title{line-height:1.05}
+.subtitle{margin-top:2px}
+.card h3{margin:0 0 10px}
+.table-wrap{scrollbar-width:thin}
+.table-wrap::-webkit-scrollbar{height:8px;width:8px}
+.table-wrap::-webkit-scrollbar-thumb{background:#4a5675;border-radius:8px}
+.icon-btn:disabled{opacity:.45;cursor:not-allowed}
+.month-grid .day:hover,.week-grid .slot:hover,.day-grid .slot:hover{outline:1px solid #5f73a8}
+.pie-wrap .legend p{font-size:13px}
+.geo-svg path{transition:fill .2s ease}
+.geo-svg path:hover{fill:#7a8bff88}
