@@ -44,3 +44,26 @@ hr{border:0;border-top:1px solid var(--line);margin:12px 0}
 .table-toolbar{margin-bottom:10px}.table-search{min-width:220px;padding:10px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.03);color:var(--text)}
 .geo-svg{width:100%;height:330px;background:rgba(255,255,255,.02);border:1px dashed var(--line);border-radius:10px}.geo-svg path{stroke:#dbe3f8;stroke-width:2}.geo-svg .g1{fill:#4cceac55}.geo-svg .g2{fill:#6870fa66}.geo-svg .g3{fill:#a594fd66}.geo-svg .g4{fill:#f26b8a66}
 .week-grid,.day-grid{display:grid;gap:8px}.week-grid{grid-template-columns:repeat(7,minmax(0,1fr))}.day-grid{grid-template-columns:1fr}.slot{height:70px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02);padding:8px}
+
+
+/* phase 5 pixel tuning */
+.main-area{padding:18px 22px}
+.page{max-width:1400px}
+.card{box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.topbar{position:sticky;top:0;z-index:5;background:color-mix(in oklab,var(--bg) 92%, transparent);backdrop-filter: blur(8px)}
+.menu-item{font-size:14px}
+.page-header .title{font-size:32px;letter-spacing:.4px}
+.page-header .subtitle{font-size:18px}
+th{background:color-mix(in oklab,var(--accent) 38%, var(--panel));position:sticky;top:0}
+td{font-size:14px}
+.table-wrap{max-height:68vh;overflow:auto}
+.icon-btn,.btn{transition:.16s ease}
+.icon-btn:hover,.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.faq{padding:0;overflow:hidden}
+.faq summary{padding:14px 16px;background:color-mix(in oklab,var(--panel) 80%, var(--accent));}
+.faq p{padding:0 16px 16px;margin:0}
+.geo-frame{padding:10px}
+.geo-svg{height:400px}
+.calendar-grid{min-height:520px}
+.month-grid .day{height:86px}
+.pie-wrap .pie{box-shadow:0 0 0 8px rgba(255,255,255,.03)}

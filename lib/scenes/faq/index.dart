@@ -18,7 +18,7 @@ class FaqPage extends StatelessComponent {
     return div(classes: 'page', [
       const HeaderBlock(title: 'FAQ', subtitle: 'Frequently Asked Questions Page'),
       for (final q in qs)
-        details(classes: 'card faq', [
+        details(attributes: const {'open': 'open'}, classes: 'card faq', [
           summary([.text(q)]),
           p([.text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.')]),
         ])

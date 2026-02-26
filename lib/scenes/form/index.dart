@@ -12,12 +12,12 @@ class FormPage extends StatelessComponent {
       div(classes: 'card', [
         form([
           div(classes: 'form-grid', [
-            _field('First Name'),
-            _field('Last Name'),
-            _field('Email', span: 2),
-            _field('Contact Number', span: 2),
-            _field('Address 1', span: 2),
-            _field('Address 2', span: 2),
+            _field('First Name', required: true),
+            _field('Last Name', required: true),
+            _field('Email', span: 2, required: true),
+            _field('Contact Number', span: 2, required: true),
+            _field('Address 1', span: 2, required: true),
+            _field('Address 2', span: 2, required: true),
           ]),
           div(classes: 'row end', [button(classes: 'btn', [.text('Create New User')])])
         ])
@@ -25,8 +25,8 @@ class FormPage extends StatelessComponent {
     ]);
   }
 
-  Component _field(String lbl, {int span = 1}) => div(classes: 'field span-$span', [
+  Component _field(String lbl, {int span = 1, bool required = false}) => div(classes: 'field span-$span', [
         label([.text(lbl)]),
-        input(attributes: {'placeholder': lbl}),
+        input(attributes: {'placeholder': lbl, if (required) 'required': 'required'}),
       ]);
 }
