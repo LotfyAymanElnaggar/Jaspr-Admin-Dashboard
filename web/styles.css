@@ -251,3 +251,16 @@ input.invalid{border-color:#e66;box-shadow:0 0 0 1px #e6656555}
   .search-exact{min-width:180px}
   .search-exact input{min-width:140px}
 }
+
+
+/* phase 16 spacing + table fidelity */
+.main-area{padding:10px 14px 18px}
+.dashboard-page .dashboard-stats{margin-top:2px}
+.dashboard-page .dashboard-mid{margin-top:14px}
+.dashboard-page .dashboard-bottom{margin-top:14px}
+.team-head,.invoice-head,.contact-head{font-weight:600;letter-spacing:.15px}
+.team-row:nth-child(even),.invoice-row:nth-child(even),.contact-row:nth-child(even){background:#1e2a49}
+.team-row:hover,.invoice-row:hover,.contact-row:hover{background:#24345a}
+.team-table-card,.invoice-table-card,.contact-table-card{border:1px solid #2e3d63}
+.stat-card .statbox h3{font-size:30px}
+.revenue-value{font-size:34px}
