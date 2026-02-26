@@ -1,25 +1,24 @@
-# React vs Jaspr Gap Report (Current)
+# React vs Jaspr Gap Report (Updated)
 
-## Matched (High)
-- Route coverage parity
-- App shell layout (sidebar + topbar + content)
-- Dark/light toggle behavior
-- Sidebar collapse behavior
-- Dashboard card/section composition
-- Team/Contacts/Invoices data table experiences (sort/paginate/select/filter)
-- FAQ expanded sections
-- Calendar views (month/week/day) + add/remove event demo behavior
+## Coverage
+- Routes: **11/11 matched**
+- Global layout: **matched**
+- Sidebar collapse + theme toggle: **matched**
 
-## Matched (Medium)
-- Bar/Line/Pie/Geography visuals (custom Jaspr components)
-- Typography/spacing/card polish
+## Feature Parity
+- Dashboard structure/cards: **high parity**
+- Team/Contacts/Invoices tables: **high parity** (sorting, filtering, pagination, selection, export)
+- Form layout: **high parity**
+- FAQ: **high parity**
+- Calendar interactions: **medium-high parity**
+- Chart visuals: **medium-high parity**
+- Geography visual: **medium parity**
 
-## Remaining Gaps
-- React-specific libraries are not used in Jaspr build:
-  - MUI DataGrid (advanced toolbar/virtualization)
-  - Nivo chart engine exact rendering
-  - FullCalendar full interaction model
-- Exact animation/states differ from React components
+## Known Non-Exact Areas
+These remain due to stack differences (React/MUI/Nivo/FullCalendar vs Jaspr custom):
+- DataGrid advanced virtualization and built-in toolbar behavior
+- Nivo chart engine rendering details and interactions
+- FullCalendar exact drag/drop + ecosystem behavior
 
-## Conclusion
-The Jaspr app is now very close in structure and UX flow, with minor differences due to framework/library constraints.
+## Current Status
+Jaspr implementation is now very close in UI and flow for practical usage and demonstration.
