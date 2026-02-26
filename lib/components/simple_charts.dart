@@ -11,7 +11,7 @@ class SimpleBarChart extends StatelessComponent {
     final maxV = values.reduce(max).toDouble();
     return div(classes: 'chart-shell', [
       p(classes: 'chart-label', [.text('Y: value')]),
-      div(classes: 'chart-wrap', [
+      div(classes: 'chart-wrap with-grid', [
         for (int i = 0; i < values.length; i++)
           div(classes: 'bar-col', [
             div(
@@ -43,6 +43,10 @@ class SimpleLineChart extends StatelessComponent {
     return div(classes: 'chart-shell', [
       p(classes: 'chart-label', [.text('Trend')]),
       svg(attributes: {'viewBox': '0 0 400 220', 'class': 'line-svg'}, [
+        line(attributes: {'x1': '0', 'y1': '40', 'x2': '400', 'y2': '40', 'stroke': '#334566', 'stroke-width': '1'}, []),
+        line(attributes: {'x1': '0', 'y1': '80', 'x2': '400', 'y2': '80', 'stroke': '#334566', 'stroke-width': '1'}, []),
+        line(attributes: {'x1': '0', 'y1': '120', 'x2': '400', 'y2': '120', 'stroke': '#334566', 'stroke-width': '1'}, []),
+        line(attributes: {'x1': '0', 'y1': '160', 'x2': '400', 'y2': '160', 'stroke': '#334566', 'stroke-width': '1'}, []),
         polyline(attributes: {
           'fill': 'none',
           'stroke': '#6870fa',

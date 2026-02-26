@@ -43,7 +43,7 @@
 - [x] Consistent chart shell dimensions
 - [x] Match palette close to React
 - [x] Legends/labels placement
-- [~] Axis/spacing fine tuning
+- [x] Axis/spacing fine tuning
 
 ## 8) Calendar parity
 - [x] Toolbar (prev/today/next)
@@ -53,7 +53,7 @@
 
 ## 9) Form + FAQ parity
 - [x] Form grid layout
-- [~] Required fields/basic validation
+- [x] Required fields/basic validation
 - [x] FAQ default expanded style + spacing
 
 ## 10) QA loop

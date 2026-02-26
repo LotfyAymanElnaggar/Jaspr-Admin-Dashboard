@@ -195,3 +195,9 @@ td{font-size:14px}
 .campaign-donut:after{content:'';position:absolute;inset:18px;background:var(--panel);border-radius:50%}
 .sales-card .chart-wrap{height:180px}
 .geo-mini-card .geo-svg.mini{height:200px}
+
+/* implementation batch: validation + chart axes */
+input.invalid{border-color:#e66;box-shadow:0 0 0 1px #e6656555}
+.field-error{margin:2px 0 0;color:#f2a6a6;font-size:12px}
+.form-error{color:#f2a6a6;font-size:13px}
+.chart-wrap.with-grid{position:relative;background-image:linear-gradient(to top, transparent 24%, #324462 25%, transparent 26%),linear-gradient(to top, transparent 49%, #324462 50%, transparent 51%),linear-gradient(to top, transparent 74%, #324462 75%, transparent 76%);background-size:100% 100%}
